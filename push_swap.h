@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/10 17:10:46 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:10:49 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 typedef struct s_lst
 {
-	int		*data;
+	int		data;
 	s_lst	*next;
 	s_lst	*prev;
 }				t_lst;

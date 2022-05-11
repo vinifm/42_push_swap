@@ -6,11 +6,14 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:41:09 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/10 16:42:17 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:10:32 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(int argc, char **argv)
-{
+#include "push_swap.h"
 
+int	main(void)
+{
+	printf("%d", 5);
+	return(0);
 }
