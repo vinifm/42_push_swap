@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/11 16:10:49 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/12 12:31:13 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,15 @@
 
 # include "./libft/libft.h"
 
+/* EXCLUIR DEPOIS */
+
+# include <stdio.h>
+
 typedef struct s_lst
 {
 	int		data;
-	s_lst	*next;
-	s_lst	*prev;
+	struct s_lst	*next;
+	struct s_lst	*prev;
 }				t_lst;
 
 #endif
