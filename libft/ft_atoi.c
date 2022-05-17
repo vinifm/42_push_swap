@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 18:26:40 by viferrei          #+#    #+#             */
-/*   Updated: 2021/08/25 19:13:27 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/17 18:22:41 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static int	ft_isspace(char c);
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	num;
-	int	minus;
+	int		i;
+	double	num;
+	int		minus;
 
 	i = 0;
 	num = 0;
