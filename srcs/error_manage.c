@@ -1,48 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   error_manage.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/25 18:26:40 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/18 18:53:11 by viferrei         ###   ########.fr       */
+/*   Created: 2022/05/18 19:26:23 by viferrei          #+#    #+#             */
+/*   Updated: 2022/05/18 19:30:43 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-static int	ft_isspace(char c);
+int	ft_error(void)
+{
+	write(2, "Error\n", 7);
+	exit(1);
+}
 
-double	ft_atoi(const char *str)
+int	check_ints(char **argv)
+{
+	int	i;
+
+	i = 0;
+
+	while (argv[++i])
+		check_if_int(argv[i]);
+	return (0);
+}
+
+void	check_if_int(char *argv)
 {
 	int		i;
 	double	num;
-	int		minus;
 
 	i = 0;
-	num = 0;
-	minus = 1;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			minus = -1;
-		i++;
-	}
-	while (ft_isdigit(str[i]))
-	{
-		num = (num * 10) + (str[i] - '0');
-		i++;
-	}
-	return (num * minus);
-}
+	printf("%s\n", argv);
 
-static int	ft_isspace(char c)
-{
-	if (c == 32 || (c > 8 && c < 14))
-		return (1);
-	else
-		return (0);
+	if (argv[i] == '-')
+	{
+		if (!argv[++i])
+			ft_error();
+	}
+	while(argv[i])
+	{
+		if(!ft_isdigit(argv[i]))
+			ft_error();
+		i++;
+	}
+	num = ft_atoi(argv);
+	if (num > INT_MAX || num < INT_MIN)
+		ft_error();
 }
