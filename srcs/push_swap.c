@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:41:09 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/17 18:23:26 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/18 13:03:46 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int argc, char **argv)
 {
 	(void)	argc;
 
+	printf("%d\n\n", ft_atoi("239823893820938"));
 	check_ints(argv);
 	return(0);
 }
@@ -36,7 +37,7 @@ int	check_ints(char **argv)
 	i = 0;
 
 	while (argv[++i])
-		check_if_integer(argv[i]);
+		check_if_int(argv[i]);
 
 	// while (argv[++i])
 	// {
