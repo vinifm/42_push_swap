@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 19:26:23 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/18 19:30:43 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/20 18:29:07 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@ int	ft_error(void)
 {
 	write(2, "Error\n", 7);
 	exit(1);
+}
+
+void	ft_exit(t_data *data, int exit_code)
+{
+	if (data)
+	{
+		free(data);
+	}
+	exit(exit_code);
 }
 
 int	check_ints(char **argv)

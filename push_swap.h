@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/18 19:52:17 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/20 18:31:35 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,21 @@
 
 typedef struct s_dlst
 {
-	int				num;
+	void			*content;
 	struct s_dlst	*next;
 	struct s_dlst	*prev;
 }				t_dlst;
 
 typedef struct s_stack
 {
-	t_dlst	*a;
-	t_dlst	*b;
+	t_dlst	*lst;
 }				t_stack;
+
+typedef struct s_data
+{
+	t_stack	*a;
+	t_stack	*b;
+}				t_data;
 
 // error_manage.c
 int		ft_error(void);
