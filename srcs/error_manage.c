@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 19:26:23 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/20 18:29:07 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/23 16:59:21 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ int	ft_error(void)
 
 void	ft_exit(t_data *data, int exit_code)
 {
+	if (data->a)
+		free(data->a);
+	if (data->b)
+		free(data->b);
 	if (data)
-	{
 		free(data);
-	}
 	exit(exit_code);
 }
 
@@ -32,7 +34,6 @@ int	check_ints(char **argv)
 	int	i;
 
 	i = 0;
-
 	while (argv[++i])
 		check_if_int(argv[i]);
 	return (0);
@@ -44,16 +45,17 @@ void	check_if_int(char *argv)
 	double	num;
 
 	i = 0;
-	printf("%s\n", argv);
-
+	// delete
+	//printf("%s\n", argv);
+	//
 	if (argv[i] == '-')
 	{
 		if (!argv[++i])
 			ft_error();
 	}
-	while(argv[i])
+	while (argv[i])
 	{
-		if(!ft_isdigit(argv[i]))
+		if (!ft_isdigit(argv[i]))
 			ft_error();
 		i++;
 	}

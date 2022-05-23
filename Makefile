@@ -6,7 +6,7 @@
 #    By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 16:11:12 by viferrei          #+#    #+#              #
-#    Updated: 2022/05/18 19:31:41 by viferrei         ###   ########.fr        #
+#    Updated: 2022/05/23 16:35:32 by viferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRCDIR		= ./srcs/
 OBJDIR		= ./objs/
 
 SRC			= push_swap.c \
-				error_manage.c
+				error_manage.c \
+				ft_dlists.c
 OBJ			= $(addprefix $(OBJDIR), $(notdir $(SRC:.c=.o)))
 
 all: $(NAME)
