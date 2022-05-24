@@ -6,7 +6,7 @@
 #    By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 16:11:12 by viferrei          #+#    #+#              #
-#    Updated: 2022/05/23 16:35:32 by viferrei         ###   ########.fr        #
+#    Updated: 2022/05/24 21:57:08 by viferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,13 @@ RM			= rm -rf
 CFLAGS		= -Wall -Wextra -Werror -g
 LIBFT_DIR	= ./libft
 LIBFT		= $(LIBFT_DIR)/libft.a
+
+# valgrind flags.
+LFLAGS		= --leak-check=full \
+				--show-leak-kinds=all \
+				--track-origins=yes \
+				--log-file=valgrind-out.txt \
+				./push_swap  1 4 2 3
 
 SRCDIR		= ./srcs/
 OBJDIR		= ./objs/
@@ -47,4 +54,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+leaks:
+	valgrind $(LFLAGS)
+
+.PHONY: all clean fclean re leaks

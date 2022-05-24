@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 17:22:07 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/23 17:09:02 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/24 21:55:23 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,4 @@ void	ft_dlstadd_back(t_dlst **lst, t_dlst *new)
 	tmp = ft_dlstlast(*lst);
 	tmp->next = new;
 	new->prev = tmp;
-	free(tmp);
 }

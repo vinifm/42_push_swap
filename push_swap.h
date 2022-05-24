@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/23 17:08:49 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/24 21:47:46 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_data
 }				t_data;
 
 // error_manage.c
-int		ft_error(void);
+int		ft_error(int exit_code);
 void	ft_exit(t_data *data, int exit_code);
 int		check_ints(char **argv);
 void	check_if_int(char *argv);

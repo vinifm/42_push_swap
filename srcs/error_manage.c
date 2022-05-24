@@ -6,27 +6,39 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 19:26:23 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/23 16:59:21 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/24 21:54:34 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_error(void)
+int	ft_error(int exit_code)
 {
 	write(2, "Error\n", 7);
-	exit(1);
+	exit(exit_code);
 }
 
 void	ft_exit(t_data *data, int exit_code)
 {
+	t_dlst	*tmp;
+
+	if (data->a->lst)
+	{
+		while (data->a->lst)
+		{
+			tmp = data->a->lst;
+			data->a->lst = data->a->lst->next;
+			free(tmp);
+		}
+	}
 	if (data->a)
 		free(data->a);
 	if (data->b)
 		free(data->b);
 	if (data)
 		free(data);
-	exit(exit_code);
+	if (exit_code)
+		exit(exit_code);
 }
 
 int	check_ints(char **argv)
@@ -45,21 +57,18 @@ void	check_if_int(char *argv)
 	double	num;
 
 	i = 0;
-	// delete
-	//printf("%s\n", argv);
-	//
 	if (argv[i] == '-')
 	{
 		if (!argv[++i])
-			ft_error();
+			ft_error(1);
 	}
 	while (argv[i])
 	{
 		if (!ft_isdigit(argv[i]))
-			ft_error();
+			ft_error(2);
 		i++;
 	}
 	num = ft_atoi(argv);
 	if (num > INT_MAX || num < INT_MIN)
-		ft_error();
+		ft_error(3);
 }
