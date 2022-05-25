@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:41:09 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/25 22:08:03 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/25 22:22:48 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,6 @@ int	main(int argc, char **argv)
 	(void) argc;
 	check_ints(argv);
 	data = init_data(argv);
-	while(data->stack_a)
-	{
-		printf("%d\n", data->stack_a->num);
-		data->stack_a = data->stack_a->next;
-	}
 	ft_exit(data, 0);
 	return (0);
 }
