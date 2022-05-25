@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:41:09 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/24 21:58:05 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/25 21:30:19 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,16 @@ t_data	*init_data(char **argv)
 	data = (t_data *) malloc(sizeof(t_data));
 	if (!data)
 		ft_exit(data, 4);
-	data->a = (t_stack *) malloc(sizeof(t_stack));
-	data->b = (t_stack *) malloc(sizeof(t_stack));
-	if (!data->a || !data->b)
+	data->stack_b = (t_dlst *) malloc(sizeof(t_dlst));
+	if (!data->stack_b)
 		ft_exit(data, 5);
 	i = 1;
 	number = (int) ft_atoi(argv[i++]);
-	data->a->lst = ft_dlstnew(number);
+	data->stack_a = ft_dlstnew(number);
 	while (argv[i])
 	{
 		number = (int) ft_atoi(argv[i++]);
-		ft_dlstadd_back(&data->a->lst, ft_dlstnew(number));
+		ft_dlstadd_back(&data->stack_a, ft_dlstnew(number));
 	}
 	return (data);
 }

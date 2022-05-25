@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/24 21:47:46 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/25 21:30:26 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,10 @@ typedef struct s_dlst
 	struct s_dlst	*prev;
 }				t_dlst;
 
-typedef struct s_stack
-{
-	t_dlst	*lst;
-}				t_stack;
-
 typedef struct s_data
 {
-	t_stack	*a;
-	t_stack	*b;
+	t_dlst	*stack_a;
+	t_dlst	*stack_b;
 }				t_data;
 
 // error_manage.c
