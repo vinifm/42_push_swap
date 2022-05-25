@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/25 21:30:26 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/25 22:05:20 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int		ft_error(int exit_code);
 void	ft_exit(t_data *data, int exit_code);
 int		check_ints(char **argv);
 void	check_if_int(char *argv);
+int		check_if_dup(t_dlst *stack_a, int number);
 
 // ft_dlists.c
 t_dlst	*ft_dlstnew(int num);

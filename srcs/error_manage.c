@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 19:26:23 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/25 21:29:41 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/25 22:03:30 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	ft_exit(t_data *data, int exit_code)
 		{
 			tmp = data->stack_a;
 			data->stack_a = data->stack_a->next;
-			printf("%d freed!\n", tmp->num);
 			free(tmp);
 		}
 	}
@@ -70,4 +69,15 @@ void	check_if_int(char *argv)
 	num = ft_atoi(argv);
 	if (num > INT_MAX || num < INT_MIN)
 		ft_error(3);
+}
+
+int	check_if_dup(t_dlst *stack_a, int number)
+{
+	while (stack_a)
+	{
+		if (number == stack_a->num)
+			return(1);
+		stack_a = stack_a->next;
+	}
+	return(0);
 }
