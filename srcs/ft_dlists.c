@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 17:22:07 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/31 18:39:25 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/01 00:12:33 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,16 @@ void	ft_dlstadd_front(t_dlst **lst, t_dlst *new)
 	new->prev = NULL;
 }
 
-// Removes first element of the list. Returns the second one.
+// Removes first element of the list. Returns the removed element.
 t_dlst	*ft_dlstrm_front(t_dlst **lst)
 {
-	t_dlst *aux;
+	t_dlst *removed;
 
-	aux = (*lst)->next;
-	free(aux->prev);
-	aux->prev = NULL;
-	return(aux);
+	removed = *lst;
+	removed->next = NULL;
+	*lst = (*lst)->next;
+	(*lst)->prev = NULL;
+	return(removed);
 }
 
 // Goes to last element of the list.
