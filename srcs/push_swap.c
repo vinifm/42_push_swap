@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:41:09 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/01 00:10:19 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/01 00:58:23 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ int	main(int argc, char **argv)
 	if (argc < 5)
 		sort_three(data);
 
+	// stack está ordenada, mas data não está apontando para o começo. fazer um
+	// dlstfirst para ir até o começo.
+	while(data->stack_a->prev)
+	{
+		data->stack_a = data->stack_a->prev;
+	}
 	while(data->stack_a)
 	{
 		printf("%d ", data->stack_a->num);

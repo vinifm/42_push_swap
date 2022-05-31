@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 16:43:18 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/01 00:11:16 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/01 00:35:45 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,22 @@
 
 void	swap(t_dlst *stack)
 {
-	t_dlst	*aux_0;
-	t_dlst	*aux_1;
+	t_dlst	*aux;
 
-	aux_0 = ft_dlstrm_front(&stack);
-	aux_1 = ft_dlstrm_front(&stack);
-	ft_dlstadd_front(&stack, aux_0);
-	ft_dlstadd_front(&stack, aux_1);
+	aux = stack;
+	stack = stack->next;
+	aux->prev = stack;
+	aux->next = stack->next;
+	stack->next = aux;
+	stack->prev = NULL;
+
+	// t_dlst	*aux_0;
+	// t_dlst	*aux_1;
+
+	// aux_0 = ft_dlstrm_front(&stack);
+	// aux_1 = ft_dlstrm_front(&stack);
+	// ft_dlstadd_front(&stack, aux_0);
+	// ft_dlstadd_front(&stack, aux_1);
 }
 
 void	sa(t_dlst *stack)
