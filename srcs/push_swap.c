@@ -6,11 +6,32 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:41:09 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/25 22:22:48 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/31 18:36:25 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	sort_three(t_data *data)
+{
+	int	n1;
+	int	n2;
+	int	n3;
+
+	// if is_sorted(data)
+	// 	return ;
+	n1 = data->stack_a->num;
+	n2 = data->stack_a->next->num;
+	n3 = data->stack_a->next->next->num;
+	if ((n1 > n2 && n1 < n3 && n2 < n3)
+		|| (n1 > n2 && n1 > n3 && n2 > n3)
+		|| (n1 < n2 && n1 < n3 && n2 > n3))
+		sa(data->stack_a);
+	// if (n1 > n2 && n1 > n3 && n2 < n3)
+	// 	ra(data->stack_a);
+	// if (n1 < n2 && n1 > n3 && n2 > n3)
+	// 	rra(data->stack_a)
+}
 
 t_data	*init_data(char **argv)
 {
@@ -41,9 +62,20 @@ int	main(int argc, char **argv)
 {
 	t_data	*data;
 
-	(void) argc;
+	if (argc == 1)
+		return (0);
 	check_ints(argv);
 	data = init_data(argv);
+	if (argc < 5)
+		sort_three(data);
+
+	while(data->stack_a)
+	{
+		printf("%d ", data->stack_a->num);
+		data->stack_a = data->stack_a->next;
+	}
+	printf("\n");
+
 	ft_exit(data, 0);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 16:11:12 by viferrei          #+#    #+#              #
-#    Updated: 2022/05/24 21:57:08 by viferrei         ###   ########.fr        #
+#    Updated: 2022/05/31 18:00:33 by viferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,10 @@ OBJDIR		= ./objs/
 
 SRC			= push_swap.c \
 				error_manage.c \
-				ft_dlists.c
+				ft_dlists.c \
+				ops_rotate_reverse.c \
+				ops_rotate.c \
+				ops_swap.c
 OBJ			= $(addprefix $(OBJDIR), $(notdir $(SRC:.c=.o)))
 
 all: $(NAME)

@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 17:22:07 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/25 21:15:41 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/05/31 18:39:25 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // Doubly linked list functions.
 
-// Create a new doubly list.
+// Create a new doubly linked list.
 t_dlst	*ft_dlstnew(int num)
 {
 	t_dlst	*lnew;
@@ -26,6 +26,32 @@ t_dlst	*ft_dlstnew(int num)
 	lnew->next = NULL;
 	lnew->prev = NULL;
 	return (lnew);
+}
+
+// Add element to the beginning of the list.
+void	ft_dlstadd_front(t_dlst **lst, t_dlst *new)
+{
+	if (!new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	(*lst)->prev = new;
+	new->next = *lst;
+	new->prev = NULL;
+}
+
+// Removes first element of the list. Returns the second one.
+t_dlst	*ft_dlstrm_front(t_dlst **lst)
+{
+	t_dlst *aux;
+
+	aux = (*lst)->next;
+	free(aux->prev);
+	aux->prev = NULL;
+	return(aux);
 }
 
 // Goes to last element of the list.
@@ -53,4 +79,5 @@ void	ft_dlstadd_back(t_dlst **lst, t_dlst *new)
 	tmp = ft_dlstlast(*lst);
 	tmp->next = new;
 	new->prev = tmp;
+	new->next = NULL;
 }
