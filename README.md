@@ -33,7 +33,10 @@ The goal is to sort in ascending order numbers into stack A. To do so you have t
 - **rrb (reverse rotate b)**: Shift down all elements of stack b by 1. The last element becomes the first one.
 - **rrr** : rra and rrb at the same time.
 
-## Usage
+### Usage
 ```sh
 $> ./push_swap <list of integers>
 ```
+
+### Program output
+The list of instructions possible to sort stack A, the smallest number being at the top.
