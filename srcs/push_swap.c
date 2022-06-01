@@ -6,11 +6,24 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:41:09 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/01 15:39:40 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/01 21:02:14 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	ft_test_read(t_data *data)
+{
+	t_dlst *aux;
+
+	aux = data->stack_a;
+	while (aux)
+	{
+		printf("%d ", aux->num);
+		aux = aux->next;
+	}
+	printf("\n");
+}
 
 void	sort_three(t_data *data)
 {
@@ -69,12 +82,7 @@ int	main(int argc, char **argv)
 	if (argc < 5)
 		sort_three(data);
 
-	while (data->stack_a)
-	{
-		printf("%d ", data->stack_a->num);
-		data->stack_a = data->stack_a->next;
-	}
-	printf("\n");
+	ft_test_read(data);
 
 	ft_exit(data, 0);
 	return (0);

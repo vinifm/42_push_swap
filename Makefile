@@ -6,7 +6,7 @@
 #    By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 16:11:12 by viferrei          #+#    #+#              #
-#    Updated: 2022/05/31 18:00:33 by viferrei         ###   ########.fr        #
+#    Updated: 2022/06/01 20:44:22 by viferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ LFLAGS		= --leak-check=full \
 				--show-leak-kinds=all \
 				--track-origins=yes \
 				--log-file=valgrind-out.txt \
-				./push_swap  1 4 2 3
+				./push_swap 3 2 1
 
 SRCDIR		= ./srcs/
 OBJDIR		= ./objs/

@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 16:43:18 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/01 15:23:41 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/01 21:03:33 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 **	seconde one.
 */
 
+// se sa receber data em vez de t_dlst*, será o mesmo que receber
+// um t_dlst** ?
 void	swap(t_dlst **stack)
 {
 	t_dlst	*aux;
