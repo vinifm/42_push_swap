@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/01 00:53:39 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/01 15:17:26 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ t_dlst	*ft_dlstlast(t_dlst *lst);
 void	ft_dlstadd_back(t_dlst **lst, t_dlst *new);
 
 // ops_swap.c
-void	swap(t_dlst *stack);
-void	sa(t_dlst *stack);
+void	swap(t_dlst **stack);
+void	sa(t_dlst **stack);
 // void	sb(t_dlst *stack);
 // void	ss(t_data *data);
 

@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 19:26:23 by viferrei          #+#    #+#             */
-/*   Updated: 2022/05/31 15:50:50 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/01 15:38:30 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ int	check_if_dup(t_dlst *stack_a, int number)
 	while (stack_a)
 	{
 		if (number == stack_a->num)
-			return(1);
+			return (1);
 		stack_a = stack_a->next;
 	}
-	return(0);
+	return (0);
 }

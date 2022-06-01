@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:41:09 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/01 00:58:23 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/01 15:39:40 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	sort_three(t_data *data)
 	if ((n1 > n2 && n1 < n3 && n2 < n3)
 		|| (n1 > n2 && n1 > n3 && n2 > n3)
 		|| (n1 < n2 && n1 < n3 && n2 > n3))
-		sa(data->stack_a);
+		sa(&(data->stack_a));
 	// if (n1 > n2 && n1 > n3 && n2 < n3)
 	// 	ra(data->stack_a);
 	// if (n1 < n2 && n1 > n3 && n2 > n3)
@@ -69,13 +69,7 @@ int	main(int argc, char **argv)
 	if (argc < 5)
 		sort_three(data);
 
-	// stack está ordenada, mas data não está apontando para o começo. fazer um
-	// dlstfirst para ir até o começo.
-	while(data->stack_a->prev)
-	{
-		data->stack_a = data->stack_a->prev;
-	}
-	while(data->stack_a)
+	while (data->stack_a)
 	{
 		printf("%d ", data->stack_a->num);
 		data->stack_a = data->stack_a->next;
