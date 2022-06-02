@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:41:09 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/01 21:02:14 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/02 21:45:24by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,22 @@ void	sort_three(t_data *data)
 	n1 = data->stack_a->num;
 	n2 = data->stack_a->next->num;
 	n3 = data->stack_a->next->next->num;
-	if ((n1 > n2 && n1 < n3 && n2 < n3)
-		|| (n1 > n2 && n1 > n3 && n2 > n3)
-		|| (n1 < n2 && n1 < n3 && n2 > n3))
+	if (n1 > n2 && n1 < n3 && n2 < n3)
 		sa(&(data->stack_a));
-	// if (n1 > n2 && n1 > n3 && n2 < n3)
-	// 	ra(data->stack_a);
+	if (n1 > n2 && n1 > n3 && n2 < n3)
+		ra(&(data->stack_a));
 	// if (n1 < n2 && n1 > n3 && n2 > n3)
-	// 	rra(data->stack_a)
+	// 	rra(&(data->stack_a));
+	// if (n1 > n2 && n1 > n3 && n2 > n3)
+	// {
+	// 	sa(&(data->stack_a));
+	// 	rra(&(data->stack_a));
+	// }
+	if (n1 < n2 && n1 < n3 && n2 > n3)
+	{
+		sa(&(data->stack_a));
+		ra(&(data->stack_a));
+	}
 }
 
 t_data	*init_data(char **argv)

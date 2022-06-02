@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 19:26:23 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/01 20:57:50 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/02 21:03:54 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_exit(t_data *data, int exit_code)
 	{
 		while (data->stack_a)
 		{
-			printf("\nfree %d\n", data->stack_a->num);
 			tmp = data->stack_a;
 			data->stack_a = data->stack_a->next;
 			free(tmp);

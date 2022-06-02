@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/01 15:17:26 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/02 22:59:42 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,19 @@ void	ft_dlstadd_back(t_dlst **lst, t_dlst *new);
 
 // ops_swap.c
 void	swap(t_dlst **stack);
-void	sa(t_dlst **stack);
-// void	sb(t_dlst *stack);
-// void	ss(t_data *data);
+void	sa(t_dlst **stack_a);
+void	sb(t_dlst **stack_b);
+void	ss(t_data *data);
 
-// // ops_rotate.c
-// void	rotate(t_dlst *stack);
-// void	ra(t_dlst *stack);
-// void	rb(t_dlst *stack);
-// void	rr(t_data *data);
+// ops_rotate.c
+void	rotate(t_dlst **stack);
+void	ra(t_dlst **stack_a);
+void	rb(t_dlst **stack_b);
+void	rr(t_data *data);
 
 // // ops_rotate_reverse.c
-// void	rra(t_dlst *stack);
-// void	rrb(t_dlst *stack);
+// void	rra(t_dlst **stack_a);
+// void	rrb(t_dlst **stack_b);
 // void	rrr(t_data *data);
 
 #endif
