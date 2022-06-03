@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 16:43:18 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/02 22:12:24 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/03 19:21:34 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,16 @@
 // Swap the first two elements of the stack.
 void	swap(t_dlst **stack)
 {
-	t_dlst	*old_first;
+	t_dlst	*second;
 
-	old_first = *stack;
-	*stack = (*stack)->next;
-	old_first->prev = (*stack);
-	old_first->next = (*stack)->next;
-	(*stack)->next = old_first;
-	(*stack)->prev = NULL;
+	if (!(*stack))
+		return ;
+	second = (*stack)->next;
+	(*stack)->prev = (*stack)->next;
+	(*stack)->next = (*stack)->next->next;
+	second->prev = NULL;
+	second->next = (*stack);
+	(*stack) = second;
 }
 void	sa(t_dlst **stack_a)
 {

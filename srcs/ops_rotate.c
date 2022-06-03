@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 16:48:06 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/02 22:11:56 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/03 19:22:09 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	rotate(t_dlst **stack)
 	t_dlst	*last;
 	t_dlst	*old_first;
 
+	if (!(*stack))
+		return ;
 	last = ft_dlstlast((*stack));
 	old_first = (*stack);
 	(*stack) = (*stack)->next;
