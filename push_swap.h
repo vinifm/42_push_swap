@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/03 22:28:08 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/06 20:54:02 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		check_if_dup(t_dlst *stack_a, int number);
 
 // ft_dlists.c
 t_dlst	*ft_dlstnew(int num);
-void	ft_dlstadd_front(t_dlst **lst, t_dlst *new);
+void	ft_dlstadd_front(t_dlst **lst, int *num)
 t_dlst	*ft_dlstlast(t_dlst *lst);
 void	ft_dlstadd_back(t_dlst **lst, t_dlst *new);
 size_t	ft_dlst_len(t_dlst *lst);

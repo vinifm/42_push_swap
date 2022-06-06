@@ -6,7 +6,7 @@
 #    By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 16:11:12 by viferrei          #+#    #+#              #
-#    Updated: 2022/06/03 21:35:08 by viferrei         ###   ########.fr        #
+#    Updated: 2022/06/06 20:28:18 by viferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ OBJDIR		= ./objs/
 SRC			= push_swap.c \
 				error_manage.c \
 				ft_dlists.c \
+				ops_push.c \
 				ops_rotate_reverse.c \
 				ops_rotate.c \
 				ops_swap.c \

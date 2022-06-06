@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 17:22:07 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/03 22:27:11 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/06 20:53:24 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ t_dlst	*ft_dlstnew(int num)
 }
 
 // Add element to the beginning of the list.
-void	ft_dlstadd_front(t_dlst **lst, t_dlst *new)
+void	ft_dlstadd_front(t_dlst **lst, int *num)
 {
+	t_dlst *new;
+
 	if (!new)
 		return ;
 	if (!*lst)
@@ -38,6 +40,7 @@ void	ft_dlstadd_front(t_dlst **lst, t_dlst *new)
 		*lst = new;
 		return ;
 	}
+	new = ft_dlstnew(num);
 	(*lst)->prev = new;
 	new->next = *lst;
 	new->prev = NULL;
