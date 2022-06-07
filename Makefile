@@ -6,7 +6,7 @@
 #    By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 16:11:12 by viferrei          #+#    #+#              #
-#    Updated: 2022/06/06 20:28:18 by viferrei         ###   ########.fr        #
+#    Updated: 2022/06/07 21:19:07 by viferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,14 +27,15 @@ LFLAGS		= --leak-check=full \
 SRCDIR		= ./srcs/
 OBJDIR		= ./objs/
 
-SRC			= push_swap.c \
+SRC			= main.c \
 				error_manage.c \
 				ft_dlists.c \
 				ops_push.c \
 				ops_rotate_reverse.c \
 				ops_rotate.c \
 				ops_swap.c \
-				sort_small.c
+				sort_small.c \
+				sort_small_utils.c
 OBJ			= $(addprefix $(OBJDIR), $(notdir $(SRC:.c=.o)))
 
 all: $(NAME)

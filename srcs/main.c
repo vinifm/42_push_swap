@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 16:41:09 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/02 21:45:24by viferrei         ###   ########.fr       */
+/*   Created: 2022/06/07 19:47:21 by viferrei          #+#    #+#             */
+/*   Updated: 2022/06/07 21:10:31 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,26 @@
 
 void	ft_test_read(t_data *data)
 {
-	t_dlst *aux;
+	t_dlst	*aux_a;
+	t_dlst	*aux_b;
 
-	aux = data->stack_a;
-	while (aux)
+	aux_a = data->stack_a;
+	aux_b = data->stack_b;
+	puts("stack a:");
+	while (aux_a)
 	{
-		printf("%d ", aux->num);
-		aux = aux->next;
+		printf("%d ", aux_a->num);
+		aux_a = aux_a->next;
+	}
+	printf("\n");
+	puts("stack b:");
+	if (aux_b)
+	{
+		while (aux_b)
+		{
+			printf("%d ", aux_b->num);
+			aux_b = aux_b->next;
+		}
 	}
 	printf("\n");
 }
@@ -34,9 +47,7 @@ t_data	*init_data(char **argv)
 	data = (t_data *) malloc(sizeof(t_data));
 	if (!data)
 		ft_exit(data, 4);
-	data->stack_b = (t_dlst *) malloc(sizeof(t_dlst));
-	if (!data->stack_b)
-		ft_exit(data, 5);
+	data->stack_b = NULL;
 	i = 1;
 	number = (int) ft_atoi(argv[i++]);
 	data->stack_a = ft_dlstnew(number);
@@ -63,7 +74,7 @@ int	main(int argc, char **argv)
 	if (argc > 4 && argc < 6)
 		sort_five(data);
 
-	// ft_test_read(data);
+	ft_test_read(data);
 
 	ft_exit(data, 0);
 	return (0);

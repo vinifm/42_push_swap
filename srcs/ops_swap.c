@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 16:43:18 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/03 19:21:34 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:10:07 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,19 @@ void	swap(t_dlst **stack)
 	second->next = (*stack);
 	(*stack) = second;
 }
+
 void	sa(t_dlst **stack_a)
 {
 	swap(stack_a);
 	write(1, "sa\n", 3);
 }
+
 void	sb(t_dlst **stack_b)
 {
 	swap(stack_b);
 	write(1, "sb\n", 3);
 }
+
 void	ss(t_data *data)
 {
 	swap(&(data->stack_a));

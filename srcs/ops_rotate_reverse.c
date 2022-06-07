@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:23:14 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/03 19:21:55 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:09:44 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,19 @@ void	rotate_reverse(t_dlst **stack)
 	last->prev = NULL;
 	(*stack) = last;
 }
+
 void	rra(t_dlst **stack_a)
 {
 	rotate_reverse(stack_a);
 	write(1, "rra\n", 4);
 }
+
 void	rrb(t_dlst **stack_b)
 {
 	rotate_reverse(stack_b);
 	write(1, "rrb\n", 4);
 }
+
 void	rrr(t_data *data)
 {
 	rotate_reverse(&(data->stack_a));

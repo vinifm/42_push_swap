@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/06 20:54:02 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/07 21:18:49 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,22 +48,15 @@ int		check_if_dup(t_dlst *stack_a, int number);
 
 // ft_dlists.c
 t_dlst	*ft_dlstnew(int num);
-void	ft_dlstadd_front(t_dlst **lst, int *num)
+void	ft_dlstadd_front(t_dlst **lst, int num);
 t_dlst	*ft_dlstlast(t_dlst *lst);
 void	ft_dlstadd_back(t_dlst **lst, t_dlst *new);
 size_t	ft_dlst_len(t_dlst *lst);
 
-// ops_swap.c
-void	swap(t_dlst **stack);
-void	sa(t_dlst **stack_a);
-void	sb(t_dlst **stack_b);
-void	ss(t_data *data);
-
-// ops_rotate.c
-void	rotate(t_dlst **stack);
-void	ra(t_dlst **stack_a);
-void	rb(t_dlst **stack_b);
-void	rr(t_data *data);
+// ops_push.c
+void	push(t_dlst **stack_0, t_dlst **stack_1);
+void	pa(t_data	*data);
+void	pb(t_data	*data);
 
 // ops_rotate_reverse.c
 void	rotate_reverse(t_dlst **stack);
@@ -71,9 +64,27 @@ void	rra(t_dlst **stack_a);
 void	rrb(t_dlst **stack_b);
 void	rrr(t_data *data);
 
+// ops_rotate.c
+void	rotate(t_dlst **stack);
+void	ra(t_dlst **stack_a);
+void	rb(t_dlst **stack_b);
+void	rr(t_data *data);
+
+// ops_swap.c
+void	swap(t_dlst **stack);
+void	sa(t_dlst **stack_a);
+void	sb(t_dlst **stack_b);
+void	ss(t_data *data);
+
 // sort_small.c
-int		is_sorted(t_dlst *stack);
 void	sort_three(t_data *data);
 void	sort_five(t_data *data);
+void	push_to_b5(t_data *data, int index);
+void	push_to_b4(t_data *data, int index);
+
+// sort_small_utils.c
+int		is_sorted(t_dlst *stack);
+void	get_mins(t_dlst *stack, t_vars *vars);
+void	find_min(t_data *data, t_vars *vars);
 
 #endif

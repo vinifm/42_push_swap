@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 19:26:23 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/02 21:03:54 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:11:01 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,14 @@ void	ft_exit(t_data *data, int exit_code)
 		}
 	}
 	if (data->stack_b)
-		free(data->stack_b);
+	{
+		while (data->stack_b)
+		{
+			tmp = data->stack_b;
+			data->stack_b = data->stack_b->next;
+			free(tmp);
+		}
+	}
 	if (data)
 		free(data);
 	if (exit_code)

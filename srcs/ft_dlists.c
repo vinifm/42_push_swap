@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 17:22:07 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/06 20:53:24 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/07 21:07:54 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,22 @@ t_dlst	*ft_dlstnew(int num)
 }
 
 // Add element to the beginning of the list.
-void	ft_dlstadd_front(t_dlst **lst, int *num)
+void	ft_dlstadd_front(t_dlst **lst, int num)
 {
-	t_dlst *new;
+	t_dlst	*new;
+	t_dlst	*old_first;
 
-	if (!new)
-		return ;
+	new = ft_dlstnew(num);
 	if (!*lst)
 	{
 		*lst = new;
 		return ;
 	}
-	new = ft_dlstnew(num);
-	(*lst)->prev = new;
-	new->next = *lst;
+	old_first = (*lst);
+	old_first->prev = new;
+	*lst = new;
 	new->prev = NULL;
+	new->next = old_first;
 }
 
 // Goes to last element of the list.
