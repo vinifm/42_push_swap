@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/07 21:18:49 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/08 21:35:28 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,15 +76,18 @@ void	sa(t_dlst **stack_a);
 void	sb(t_dlst **stack_b);
 void	ss(t_data *data);
 
-// sort_small.c
-void	sort_three(t_data *data);
-void	sort_five(t_data *data);
-void	push_to_b5(t_data *data, int index);
-void	push_to_b4(t_data *data, int index);
+// sort_radix.c
+
 
 // sort_small_utils.c
 int		is_sorted(t_dlst *stack);
 void	get_mins(t_dlst *stack, t_vars *vars);
 void	find_min(t_data *data, t_vars *vars);
+
+// sort_small.c
+void	sort_three(t_data *data);
+void	sort_five(t_data *data);
+void	push_to_b5(t_data *data, int index);
+void	push_to_b4(t_data *data, int index);
 
 #endif

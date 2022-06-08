@@ -6,7 +6,7 @@
 #    By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 16:11:12 by viferrei          #+#    #+#              #
-#    Updated: 2022/06/07 21:19:07 by viferrei         ###   ########.fr        #
+#    Updated: 2022/06/08 21:32:03 by viferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRC			= main.c \
 				ops_rotate_reverse.c \
 				ops_rotate.c \
 				ops_swap.c \
+				sort_radix.c \
 				sort_small.c \
 				sort_small_utils.c
 OBJ			= $(addprefix $(OBJDIR), $(notdir $(SRC:.c=.o)))
