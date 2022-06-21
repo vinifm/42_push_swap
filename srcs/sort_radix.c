@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 21:32:14 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/08 22:17:19 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/21 17:51:00 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	make_positive(t_data *data)
 {
 	t_dlst	*stack;
 	t_dlst	*min;
-	int		i;
-	int		j;
+	size_t	i;
+	// size_t	j;
 
 	stack = data->stack_a;
 	min = stack;

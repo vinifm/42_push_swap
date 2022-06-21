@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 19:47:21 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/08 21:32:10 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/21 17:52:46 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,14 @@ int	main(int argc, char **argv)
 	check_ints(argv);
 	data = init_data(argv);
 	if (argc == 4)
+	{
+		printf("here");
 		sort_three(data);
+	}
 	if (argc > 4 && argc < 6)
 		sort_five(data);
-	else
-		sort_radix(data);
+	// else
+	// 	sort_radix(data);
 
 	ft_test_read(data);
 
