@@ -1,5 +1,6 @@
 push_swap
 *.o
 *.a
+*.gch
 valgrind-out.txt
 vgcore*
