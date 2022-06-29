@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/08 21:35:28 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/29 21:22:38 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	ss(t_data *data);
 // sort_small_utils.c
 int		is_sorted(t_dlst *stack);
 void	get_mins(t_dlst *stack, t_vars *vars);
-void	find_min(t_data *data, t_vars *vars);
+void	push_to_b(t_data *data, t_vars *vars);
 
 // sort_small.c
 void	sort_three(t_data *data);

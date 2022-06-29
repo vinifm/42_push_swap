@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   sort_small_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:13:02 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/07 21:16:49 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/29 21:22:25 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,17 @@ void	get_mins(t_dlst *stack, t_vars *vars)
 	while (stack->next)
 	{
 		if (vars->min_0 > stack->next->num)
-		{
-			vars->min_1 = vars->min_0;
 			vars->min_0 = stack->next->num;
-		}
+		if ((vars->min_1 > stack->next->num)
+				&& (stack->next->num != vars->min_0))
+			vars->min_1 = stack->next->num;
 		stack = stack->next;
 	}
 }
 
-// saves the index of the two smallest numbers of the stack.
-void	find_min(t_data *data, t_vars *vars)
+//	saves the index of the two smallest numbers of the stack and pushes it to
+//	stack b
+void	push_to_b(t_data *data, t_vars *vars)
 {
 	t_dlst	*lst;
 	int		index;

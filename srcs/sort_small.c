@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 19:23:08 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/07 22:09:13 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/29 21:25:59 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ void	sort_five(t_data *data)
 
 	vars.len = ft_dlst_len(data->stack_a);
 	get_mins(data->stack_a, &vars);
-	find_min(data, &vars);
+	push_to_b(data, &vars);
+	sort_three(data);
+	pa(data);
+	pa(data);
 }
 
 void	push_to_b5(t_data *data, int index)
