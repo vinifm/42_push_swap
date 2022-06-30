@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 21:32:14 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/30 21:16:10 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/30 23:47:35 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,52 +15,77 @@
 //	turns the number of the stack from 0 to len(stack_a).
 //	e.g. (5, -2, 3, -46) becomes (3, 1, 2, 0)
 
+// tentar fazer um bubble sort:
+// https://www.geeksforgeeks.org/bubble-sort/
+
+
 // returns 1 if the given number is not in the list, or zero if it is
-// int	not_in_lst(t_list *lst, int min)
+// int	not_in_lst(t_dlst *lst, int min)
 // {
 // 	while (lst)
 // 	{
-// 		if (min == lst->content)
+// 		if (min == lst->num)
 // 			return (0);
 // 		lst = lst->next;
 // 	}
 // 	return (1);
 // }
 
-// t_list order_nums(t_dlst *stack)
+// void	ft_pop(t_dlst **stack, int min)
 // {
-// 	t_list *lst;
-// 	int		min;
+// 	t_dlst *start;
 
+// 	if (!*stack)
+// 		return ;
+// 	if ((*stack)->num == min)
+// 		(*stack) =
+// 	while (*stack)
+// 	{
+// 		if ((*stack)->num == min)
+// 		{
+// 			if ((*stack)->prev)
+// 				(*stack)->prev->next = (*stack)->next;
+// 			if ((*stack)->next)
+// 				(*stack)->next->prev = (*stack)->prev;
+// 		}
+// 		(*stack) = (*stack)->next;
+// 		// free(tmp);
+// 	}
+// 	(*stack = start)
+// }
+
+// t_dlst *order_nums(t_dlst *stack)
+// {
+// 	t_dlst		*lst;
+// 	t_dlst		*start;
+// 	int			min;
+// 	size_t		len;
+
+// 	lst = NULL;
+// 	start = stack;
 // 	min = stack->num;
-// 	while (stack->next)
+// 	len = ft_dlst_len(stack);
+// 	while (len)
 // 	{
-// 		if ((min > stack->next) && not_in_lst(lst, min))
-// 			min = stack->next;
+// 		stack = start;
+// 		while (stack->next)
+// 		{
+// 			if ((min > stack->next->num))
+// 				min = stack->next->num;
+// 			stack = stack->next;
+// 		}
+// 		ft_dlstadd_back(&lst, min);
+// 		// ft_pop(&start, min);
+// 		len--;
 // 	}
-// }
 
-// PROBS: transformar o numero minimo em 0 não vai atrapalhar o resto do loop?
-// void	make_positive(t_data *data)
-// {
-// 	t_dlst	*stack;
-// 	t_dlst	*min;
-// 	size_t	i;
-// 	// size_t	j;
-
-// 	stack = data->stack_a;
-// 	min = stack;
-// 	i = 0;
-// 	while (i < ft_dlst_len(stack))
+// 	// TEST
+// 	printf("\nLIST:");
+// 	while (lst)
 // 	{
-// 		if (stack->num > stack->next->num)
-// 			min = stack->next;
-// 		stack = stack->next;
+// 		printf("%d", lst->num);
+// 		lst = lst->next;
 // 	}
-// }
-
-// void	sort_radix(t_data *data)
-// {
-// 	make_positive(data);
-
+// 	printf("\n\n");
+// 	return (lst);
 // }

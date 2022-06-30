@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 17:22:07 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/07 21:07:54 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/30 23:48:06 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,12 @@ t_dlst	*ft_dlstlast(t_dlst *lst)
 }
 
 // Add element to the end of the list.
-void	ft_dlstadd_back(t_dlst **lst, t_dlst *new)
+void	ft_dlstadd_back(t_dlst **lst, int num)
 {
+	t_dlst	*new;
 	t_dlst	*tmp;
 
-	if (!new)
-		return ;
+	new = ft_dlstnew(num);
 	if (!*lst)
 	{
 		*lst = new;

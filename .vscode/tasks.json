@@ -14,7 +14,7 @@
                 "${workspaceFolder}/srcs/*.c",
                 "${workspaceFolder}/libft/libft.a",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${workspaceFolder}/push_swap"
             ],
             "options": {
                 "cwd": "${fileDirname}"

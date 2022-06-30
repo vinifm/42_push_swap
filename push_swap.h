@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/30 21:10:41 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/30 22:58:28 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		check_if_dup(t_dlst *stack_a, int number);
 t_dlst	*ft_dlstnew(int num);
 void	ft_dlstadd_front(t_dlst **lst, int num);
 t_dlst	*ft_dlstlast(t_dlst *lst);
-void	ft_dlstadd_back(t_dlst **lst, t_dlst *new);
+void	ft_dlstadd_back(t_dlst **lst, int num);
 size_t	ft_dlst_len(t_dlst *lst);
 
 // ops_push.c
@@ -78,7 +78,8 @@ void	sb(t_dlst **stack_b);
 void	ss(t_data *data);
 
 // sort_radix.c
-
+t_dlst	*order_nums(t_dlst *stack);
+int		not_in_lst(t_dlst *lst, int min);
 
 // sort_small_utils.c
 int		is_sorted(t_dlst *stack);
