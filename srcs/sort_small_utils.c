@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:13:02 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/29 21:22:25 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/30 21:10:45 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,19 @@ int	is_sorted(t_dlst *stack)
 	return (0);
 }
 
-// saves the two smallest numbers of the stack.
-void	get_mins(t_dlst *stack, t_vars *vars)
+// saves the smallest number of the stack.
+void	get_min(t_dlst *stack, t_vars *vars)
 {
-	vars->min_0 = stack->num;
-	vars->min_1 = stack->num;
+	vars->min = stack->num;
 	while (stack->next)
 	{
-		if (vars->min_0 > stack->next->num)
-			vars->min_0 = stack->next->num;
-		if ((vars->min_1 > stack->next->num)
-				&& (stack->next->num != vars->min_0))
-			vars->min_1 = stack->next->num;
+		if (vars->min > stack->next->num)
+			vars->min = stack->next->num;
 		stack = stack->next;
 	}
 }
 
-//	saves the index of the two smallest numbers of the stack and pushes it to
+//	saves the index of the smallest numbers of the stack and pushes it to
 //	stack b
 void	push_to_b(t_data *data, t_vars *vars)
 {
@@ -53,7 +49,7 @@ void	push_to_b(t_data *data, t_vars *vars)
 	lst = data->stack_a;
 	while (lst->next)
 	{
-		if (lst->num == vars->min_0 || lst->num == vars->min_1)
+		if (lst->num == vars->min)
 			break ;
 		index++;
 		lst = lst->next;

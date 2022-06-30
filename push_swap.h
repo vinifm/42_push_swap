@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/29 21:22:38 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/06/30 21:10:41 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,13 @@ typedef struct s_data
 {
 	t_dlst	*stack_a;
 	t_dlst	*stack_b;
+	int		min;
+	int		len;
 }				t_data;
 
 typedef struct s_vars
 {
-	int		min_0;
-	int		min_1;
+	int		min;
 	int		len;
 }				t_vars;
 
@@ -81,7 +82,7 @@ void	ss(t_data *data);
 
 // sort_small_utils.c
 int		is_sorted(t_dlst *stack);
-void	get_mins(t_dlst *stack, t_vars *vars);
+void	get_min(t_dlst *stack, t_vars *vars);
 void	push_to_b(t_data *data, t_vars *vars);
 
 // sort_small.c
