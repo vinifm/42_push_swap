@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/30 22:58:28 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/13 21:22:50 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,7 @@ void	sb(t_dlst **stack_b);
 void	ss(t_data *data);
 
 // sort_radix.c
-t_dlst	*order_nums(t_dlst *stack);
-int		not_in_lst(t_dlst *lst, int min);
+void	sort_radix(t_data *data);
 
 // sort_small_utils.c
 int		is_sorted(t_dlst *stack);

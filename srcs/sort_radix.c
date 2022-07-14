@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 21:32:14 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/30 23:47:35 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/13 21:22:49 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,74 +18,65 @@
 // tentar fazer um bubble sort:
 // https://www.geeksforgeeks.org/bubble-sort/
 
+void	print_array(int arr[], t_data *data)
+{
+	int	i;
 
-// returns 1 if the given number is not in the list, or zero if it is
-// int	not_in_lst(t_dlst *lst, int min)
-// {
-// 	while (lst)
-// 	{
-// 		if (min == lst->num)
-// 			return (0);
-// 		lst = lst->next;
-// 	}
-// 	return (1);
-// }
+	i = 0;
+	while (i < data->len)
+	{
+		ft_printf("%d ", arr[i]);
+		i++;
+	}
+}
 
-// void	ft_pop(t_dlst **stack, int min)
-// {
-// 	t_dlst *start;
+void	sort_radix(t_data *data)
+{
+	int	arr[data->len];
+	bubble_sort(&arr, data->stack_a, data->len);
 
-// 	if (!*stack)
-// 		return ;
-// 	if ((*stack)->num == min)
-// 		(*stack) =
-// 	while (*stack)
-// 	{
-// 		if ((*stack)->num == min)
-// 		{
-// 			if ((*stack)->prev)
-// 				(*stack)->prev->next = (*stack)->next;
-// 			if ((*stack)->next)
-// 				(*stack)->next->prev = (*stack)->prev;
-// 		}
-// 		(*stack) = (*stack)->next;
-// 		// free(tmp);
-// 	}
-// 	(*stack = start)
-// }
+	// TEST TEST TEST
+	print_array(arr, data);
+}
 
-// t_dlst *order_nums(t_dlst *stack)
-// {
-// 	t_dlst		*lst;
-// 	t_dlst		*start;
-// 	int			min;
-// 	size_t		len;
+void	copy_stack(int *arr[], t_dlst *stack, int len)
+{
+	int	i;
 
-// 	lst = NULL;
-// 	start = stack;
-// 	min = stack->num;
-// 	len = ft_dlst_len(stack);
-// 	while (len)
-// 	{
-// 		stack = start;
-// 		while (stack->next)
-// 		{
-// 			if ((min > stack->next->num))
-// 				min = stack->next->num;
-// 			stack = stack->next;
-// 		}
-// 		ft_dlstadd_back(&lst, min);
-// 		// ft_pop(&start, min);
-// 		len--;
-// 	}
+	i = 0;
+	while (i < len)
+	{
+		arr[i] = stack->num;
+		stack = stack->next;
+		i++;
+	}
+}
 
-// 	// TEST
-// 	printf("\nLIST:");
-// 	while (lst)
-// 	{
-// 		printf("%d", lst->num);
-// 		lst = lst->next;
-// 	}
-// 	printf("\n\n");
-// 	return (lst);
-// }
+void	swap_ints(int *x, int *y)
+{
+	int	tmp;
+
+	tmp = *x;
+	*x = *y;
+	*y = tmp;
+}
+
+void	bubble_sort(int *arr[], t_dlst *stack, int len)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	copy_stack(arr, stack, len);
+	while (i < len - 1)
+	{
+		while(j < len - i - 1)
+		{
+			if (*arr[j] > *arr[j + 1])
+				swap_ints(arr[j], arr[j + 1]);
+			j++;
+		}
+		i++;
+	}
+}
+
