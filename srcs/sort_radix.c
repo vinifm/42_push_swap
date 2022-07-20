@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 21:32:14 by viferrei          #+#    #+#             */
-/*   Updated: 2022/07/15 16:34:03 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/20 19:41:39 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,19 +71,18 @@ int	find_stack_index(int *arr, int stack_num, int len)
 	return (index);
 }
 
-// 0 10 5 6 3 20 -5
-// -5 0 3 5 6 10 20
-
-void	make_stack_positive(t_dlst **stack, int *arr, int *index_list)
+void	make_stack_positive(t_dlst **stack, int *arr)
 {
-	int	index;
+	int		index;
+	int		len;
 	t_dlst	*start;
 
+	len = ft_dlst_len(*stack);
 	start = *(stack);
 	while (*stack)
 	{
-		index = find_stack_index(arr, (*stack)->num, ft_dlst_len(*stack))
-		(*stack)->num = index_list[index];
+		index = find_stack_index(arr, (*stack)->num, len);
+		(*stack)->num = index;
 		*stack = (*stack)->next;
 	}
 	*(stack) = start;
@@ -92,16 +91,9 @@ void	make_stack_positive(t_dlst **stack, int *arr, int *index_list)
 void	big_sort(t_data *data)
 {
 	int	stack_arr[data->len];
-	int	index_list[data->len];
 	int	index;
 	t_dlst	*stack;
 
-	index = 0;
-	while (index < data->len)
-	{
-		index_list[index] = index;
-		index++;
-	}
 	index = 0;
 	stack = data->stack_a;
 	while (stack)
@@ -111,7 +103,7 @@ void	big_sort(t_data *data)
 		index++;
 	}
 	bubble_sort(stack_arr, data->len);
-	make_stack_positive(&(data->stack_a), stack_arr, index_list);
+	make_stack_positive(&(data->stack_a), stack_arr);
 
 	// TEST TEST TEST
 	print_array(stack_arr, data);

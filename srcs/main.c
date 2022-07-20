@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 19:47:21 by viferrei          #+#    #+#             */
-/*   Updated: 2022/07/15 15:40:07 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/20 17:59:08 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ void	ft_test_read(t_data *data)
 
 	aux_a = data->stack_a;
 	aux_b = data->stack_b;
+	printf("\n");
 	puts("stack a:");
 	while (aux_a)
 	{
 		printf("%d ", aux_a->num);
 		aux_a = aux_a->next;
 	}
-	printf("\n");
+	printf("\n\n");
 	puts("stack b:");
 	if (aux_b)
 	{
@@ -65,10 +66,13 @@ t_data	*init_data(char **argv)
 int	main(int argc, char **argv)
 {
 	t_data	*data;
+	int	i;
 
 	if (argc == 1)
 		return (0);
-	check_ints(argv);
+	i = 0;
+	while (argv[++i])
+		check_if_int(argv[i]);
 	data = init_data(argv);
 	if (argc == 4)
 		sort_three(data);
@@ -77,7 +81,7 @@ int	main(int argc, char **argv)
 	else
 		big_sort(data);
 
-	// ft_test_read(data);
+	ft_test_read(data);
 
 	ft_exit(data, 0);
 	return (0);

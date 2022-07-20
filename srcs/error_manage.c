@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 19:26:23 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/07 22:11:01 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/20 17:54:19 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,6 @@ void	ft_exit(t_data *data, int exit_code)
 		free(data);
 	if (exit_code)
 		exit(exit_code);
-}
-
-int	check_ints(char **argv)
-{
-	int	i;
-
-	i = 0;
-	while (argv[++i])
-		check_if_int(argv[i]);
-	return (0);
 }
 
 void	check_if_int(char *argv)

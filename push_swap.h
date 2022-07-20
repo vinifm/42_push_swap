@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/07/15 15:39:40 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/20 17:54:13 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ typedef struct s_vars
 // error_manage.c
 int		ft_error(int exit_code);
 void	ft_exit(t_data *data, int exit_code);
-int		check_ints(char **argv);
 void	check_if_int(char *argv);
 int		check_if_dup(t_dlst *stack_a, int number);
 
