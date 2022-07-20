@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 19:47:21 by viferrei          #+#    #+#             */
-/*   Updated: 2022/07/20 17:59:08 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/20 21:19:29 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	main(int argc, char **argv)
 	if (argc > 4 && argc < 7)
 		sort_five(data);
 	else
-		big_sort(data);
+		sort_big(data);
 
 	ft_test_read(data);
 

@@ -5,106 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/08 21:32:14 by viferrei          #+#    #+#             */
-/*   Updated: 2022/07/20 19:41:39 by viferrei         ###   ########.fr       */
+/*   Created: 2022/07/20 20:12:41 by viferrei          #+#    #+#             */
+/*   Updated: 2022/07/20 23:24:24 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-//	turns the number of the stack from 0 to len(stack_a).
-//	e.g. (5, -2, 3, -46) becomes (3, 1, 2, 0)
-
-void	print_array(int arr[], t_data *data)
+void	sort_radix(t_data *data)
 {
-	int	i;
+	t_vars_radix	vars;
 
-	i = 0;
-	while (i < data->len)
+	vars.max_num =  data->len - 1;
+	vars.bit_count = 0;
+	vars.max_bits = 0;
+	while ((vars.max_num >> vars.max_bits) != 0)
+		vars.max_bits++;
+	while (vars.bit_count < vars.max_bits)
 	{
-		ft_printf("%d ", arr[i]);
-		i++;
-	}
-	ft_printf("\n");
-}
-
-void	swap_ints(int *x, int *y)
-{
-	int	tmp;
-
-	tmp = *x;
-	*x = *y;
-	*y = tmp;
-}
-
-void	bubble_sort(int *arr, int len)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < len - 1)
-	{
-		j = 0;
-		while(j < len - i - 1)
+		vars.num_count = 0;
+		while (vars.num_count < data->len)
 		{
-			if (arr[j] > arr[j + 1])
-				swap_ints(&arr[j], &arr[j + 1]);
-			j++;
+			vars.num = data->stack_a->num;
+			if (((vars.num >> vars.bit_count) & 1) == 1)
+			{
+				ra(&(data->stack_a));
+			}
+			else
+			{
+				pb(data);
+			}
+			vars.num_count++;
 		}
-		i++;
+		vars.bit_count++;
+		vars.stack_head = data->stack_b;
+		while (vars.stack_head)
+		{
+			pa(data);
+			vars.stack_head = vars.stack_head->next;
+		}
 	}
-}
-
-int	find_stack_index(int *arr, int stack_num, int len)
-{
-	int	index;
-
-	index = 0;
-	while (len)
-	{
-		if (stack_num == arr[index])
-			break ;
-		index++;
-		len--;
-	}
-	return (index);
-}
-
-void	make_stack_positive(t_dlst **stack, int *arr)
-{
-	int		index;
-	int		len;
-	t_dlst	*start;
-
-	len = ft_dlst_len(*stack);
-	start = *(stack);
-	while (*stack)
-	{
-		index = find_stack_index(arr, (*stack)->num, len);
-		(*stack)->num = index;
-		*stack = (*stack)->next;
-	}
-	*(stack) = start;
-}
-
-void	big_sort(t_data *data)
-{
-	int	stack_arr[data->len];
-	int	index;
-	t_dlst	*stack;
-
-	index = 0;
-	stack = data->stack_a;
-	while (stack)
-	{
-		stack_arr[index] = stack->num;
-		stack = stack->next;
-		index++;
-	}
-	bubble_sort(stack_arr, data->len);
-	make_stack_positive(&(data->stack_a), stack_arr);
-
-	// TEST TEST TEST
-	print_array(stack_arr, data);
 }

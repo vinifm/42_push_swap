@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:13:02 by viferrei          #+#    #+#             */
-/*   Updated: 2022/07/15 15:39:45 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/20 21:15:11 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,35 +27,36 @@ int	is_sorted(t_dlst *stack)
 }
 
 // saves the smallest number of the stack.
-void	get_min(t_dlst *stack, t_vars *vars)
+void	get_min(t_dlst *stack, int *min)
 {
-	vars->min = stack->num;
+	*min = stack->num;
 	while (stack->next)
 	{
-		if (vars->min > stack->next->num)
-			vars->min = stack->next->num;
+		if (*min > stack->next->num)
+			*min = stack->next->num;
 		stack = stack->next;
 	}
 }
 
 //	saves the index of the smallest numbers of the stack and pushes it to
 //	stack b
-void	push_to_b(t_data *data, t_vars *vars)
+void	push_to_b(t_data *data, int *min, int len)
 {
-	t_dlst	*lst;
 	int		index;
+	t_dlst	*lst;
+
 
 	index = 0;
 	lst = data->stack_a;
 	while (lst->next)
 	{
-		if (lst->num == vars->min)
+		if (lst->num == *min)
 			break ;
 		index++;
 		lst = lst->next;
 	}
-	if (vars->len == 5)
+	if (len == 5)
 		push_to_b5(data, index);
-	if (vars->len == 4)
+	if (len == 4)
 		push_to_b4(data, index);
 }

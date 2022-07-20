@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/07/20 17:54:13 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/20 23:20:52 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,15 @@ typedef struct s_data
 	int		len;
 }				t_data;
 
-typedef struct s_vars
+typedef struct s_vars_radix
 {
-	int		min;
-	int		len;
-}				t_vars;
+	int		max_num;
+	int		max_bits;
+	int		bit_count;
+	int		num_count;
+	int		num;
+	t_dlst	*stack_head;
+}				t_vars_radix;
 
 // error_manage.c
 int		ft_error(int exit_code);
@@ -76,13 +80,16 @@ void	sa(t_dlst **stack_a);
 void	sb(t_dlst **stack_b);
 void	ss(t_data *data);
 
+// sort_big.c
+void	sort_big(t_data *data);
+
 // sort_radix.c
-void	big_sort(t_data *data);
+void	sort_radix(t_data *data);
 
 // sort_small_utils.c
 int		is_sorted(t_dlst *stack);
-void	get_min(t_dlst *stack, t_vars *vars);
-void	push_to_b(t_data *data, t_vars *vars);
+void	get_min(t_dlst *stack, int *min);
+void	push_to_b(t_data *data, int *min, int len);
 
 // sort_small.c
 void	sort_three(t_data *data);

@@ -6,7 +6,7 @@
 #    By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/10 16:11:12 by viferrei          #+#    #+#              #
-#    Updated: 2022/06/30 22:50:39 by viferrei         ###   ########.fr        #
+#    Updated: 2022/07/20 23:33:01 by viferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRC			= main.c \
 				ops_rotate_reverse.c \
 				ops_rotate.c \
 				ops_swap.c \
+				sort_big.c \
 				sort_radix.c \
 				sort_small.c \
 				sort_small_utils.c
