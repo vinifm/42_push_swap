@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 19:47:21 by viferrei          #+#    #+#             */
-/*   Updated: 2022/07/20 21:19:29 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/20 23:53:16 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ t_data	*init_data(char **argv)
 int	main(int argc, char **argv)
 {
 	t_data	*data;
-	int	i;
+	int		i;
 
 	if (argc == 1)
 		return (0);
@@ -80,9 +80,7 @@ int	main(int argc, char **argv)
 		sort_five(data);
 	else
 		sort_big(data);
-
 	ft_test_read(data);
-
 	ft_exit(data, 0);
 	return (0);
 }

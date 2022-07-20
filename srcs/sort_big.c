@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 21:32:14 by viferrei          #+#    #+#             */
-/*   Updated: 2022/07/20 23:29:58 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/20 23:42:16 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	bubble_sort(int *arr, int len)
 	while (i < len - 1)
 	{
 		j = 0;
-		while(j < len - i - 1)
+		while (j < len - i - 1)
 		{
 			if (arr[j] > arr[j + 1])
 				swap_ints(&arr[j], &arr[j + 1]);
@@ -74,10 +74,11 @@ void	make_stack_positive(t_dlst **stack, int *arr)
 
 void	sort_big(t_data *data)
 {
-	int	stack_arr[data->len];
-	int	index;
+	int		*stack_arr;
+	int		index;
 	t_dlst	*stack;
 
+	stack_arr = malloc(sizeof(int) * data->len);
 	index = 0;
 	stack = data->stack_a;
 	while (stack)
@@ -89,7 +90,5 @@ void	sort_big(t_data *data)
 	bubble_sort(stack_arr, data->len);
 	make_stack_positive(&(data->stack_a), stack_arr);
 	sort_radix(data);
-
-	// TEST TEST TEST
-	print_array(stack_arr, data);
+	free(stack_arr);
 }

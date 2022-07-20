@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 21:13:02 by viferrei          #+#    #+#             */
-/*   Updated: 2022/07/20 21:15:11 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/20 23:42:55 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	push_to_b(t_data *data, int *min, int len)
 {
 	int		index;
 	t_dlst	*lst;
-
 
 	index = 0;
 	lst = data->stack_a;
