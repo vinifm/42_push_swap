@@ -6,11 +6,17 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 19:23:08 by viferrei          #+#    #+#             */
-/*   Updated: 2022/07/20 21:16:19 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/21 20:02:19 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	sort_two(t_data *data)
+{
+	if (data->stack_a->num > data->stack_a->next->num)
+		sa(&(data->stack_a));
+}
 
 void	sort_three(t_data *data)
 {
@@ -18,8 +24,6 @@ void	sort_three(t_data *data)
 	int	n2;
 	int	n3;
 
-	if (is_sorted(data->stack_a))
-		return ;
 	n1 = data->stack_a->num;
 	n2 = data->stack_a->next->num;
 	n3 = data->stack_a->next->next->num;

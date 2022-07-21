@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 16:43:18 by viferrei          #+#    #+#             */
-/*   Updated: 2022/06/30 21:40:12 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/21 20:08:59 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	swap(t_dlst **stack)
 	second = (*stack)->next;
 	(*stack)->prev = (*stack)->next;
 	(*stack)->next = (*stack)->next->next;
-	(*stack)->next->prev = *(stack);
+	if ((*stack)->next)
+		(*stack)->next->prev = *(stack);
 	second->prev = NULL;
 	second->next = (*stack);
 	(*stack) = second;

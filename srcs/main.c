@@ -6,38 +6,11 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 19:47:21 by viferrei          #+#    #+#             */
-/*   Updated: 2022/07/20 23:53:16 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/21 20:22:48 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	ft_test_read(t_data *data)
-{
-	t_dlst	*aux_a;
-	t_dlst	*aux_b;
-
-	aux_a = data->stack_a;
-	aux_b = data->stack_b;
-	printf("\n");
-	puts("stack a:");
-	while (aux_a)
-	{
-		printf("%d ", aux_a->num);
-		aux_a = aux_a->next;
-	}
-	printf("\n\n");
-	puts("stack b:");
-	if (aux_b)
-	{
-		while (aux_b)
-		{
-			printf("%d ", aux_b->num);
-			aux_b = aux_b->next;
-		}
-	}
-	printf("\n");
-}
 
 t_data	*init_data(char **argv)
 {
@@ -74,13 +47,16 @@ int	main(int argc, char **argv)
 	while (argv[++i])
 		check_if_int(argv[i]);
 	data = init_data(argv);
-	if (argc == 4)
+	if (is_sorted(data->stack_a))
+		return (0);
+	else if (argc == 3)
+		sort_two(data);
+	else if (argc == 4)
 		sort_three(data);
-	if (argc > 4 && argc < 7)
+	else if (argc > 4 && argc < 7)
 		sort_five(data);
 	else
 		sort_big(data);
-	ft_test_read(data);
 	ft_exit(data, 0);
 	return (0);
 }

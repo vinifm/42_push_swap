@@ -29,13 +29,13 @@ BONUS_O	= $(addprefix $(OBJ_DIR)/, $(BONUS_S:.c=.o))
 all: 		$(NAME)
 
 $(NAME):	$(OBJ_DIR) $(OBJ)
-			$(LIB) $(NAME) $(OBJ)
+			@$(LIB) $(NAME) $(OBJ)
 
 $(OBJ_DIR):
-	mkdir $(OBJ_DIR)
+			@mkdir $(OBJ_DIR)
 
 $(OBJ_DIR)/%.o:	%.c	$(INCLUDE)
-			$(CC) $(CFLAGS) -c $< -o $@
+			@$(CC) $(CFLAGS) -c $< -o $@
 
 bonus:		$(BONUS_O)
 			$(LIB) $(NAME) $(BONUS_O)
