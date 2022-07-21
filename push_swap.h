@@ -6,7 +6,7 @@
 /*   By: viferrei <viferrei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:45:24 by viferrei          #+#    #+#             */
-/*   Updated: 2022/07/21 20:02:43 by viferrei         ###   ########.fr       */
+/*   Updated: 2022/07/21 20:57:22 by viferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ typedef struct s_data
 {
 	t_dlst	*stack_a;
 	t_dlst	*stack_b;
-	int		min;
 	int		len;
 }				t_data;
 
